@@ -21,7 +21,12 @@ Route::get('halo', function () {
 
 // Route view blade
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend');
+});
+
+// Route view blade
+Route::get('/frontend', function () {
+    return view('frontend');
 });
 
 Route::get('/selamat', function () {
@@ -40,3 +45,50 @@ Route::get('/hello',
 Route::get('/hello',
     'App\Http\Controllers\Coba@helloWolrd'
 );
+
+// Pertemuan 1
+Route::get('/pertemuan1', function () {
+    return view('pertemuan1');
+});
+
+// Pertemuan 2
+Route::get('/pertemuan2', function () {
+    return view('pertemuan2');
+});
+
+// Pertemuan 3
+Route::get('/pertemuan3', function () {
+    return view('bootstrap2');
+});
+
+
+// Pertemuan 4
+Route::get('/pertemuan4', function () {
+    return view('pertemuan4');
+});
+
+// Linktree
+Route::get('/linktree', function () {
+    return view('linktree');
+});
+
+// Pertemuan 7.1
+Route::get('/pertemuan7-1', function () {
+    return view('js1');
+});
+
+// Pertemuan 7.2
+Route::get('/pertemuan7-2', function () {
+    return view('js2');
+});
+
+// Pertemuan 8
+Route::get('/pertemuan8', function () {
+    return view('danantara');
+});
+
+// ETS
+Route::get('/ets', function () {
+    return view('ets');
+});
+

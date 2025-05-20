@@ -1,0 +1,43 @@
+body {
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-family: Inter, sans-serif;
+}
+
+blockquote {
+    text-decoration: solid;
+    text-align: justify;
+}
+
+figcaption {
+    font-size: small;
+    text-align: left;
+}
+
+p {
+    text-decoration: solid;
+    text-align: justify;
+    line-height: 24px;
+    font-size: medium;
+}
+
+a:link, a:visited {
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(6, 6, 169);
+    text-decoration: solid;
+}
+
+.quote {
+    font-size: large;
+    line-height: 24px;;
+}
+
+.container-quote{
+    border-left: 4px solid #EEEEEE;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
