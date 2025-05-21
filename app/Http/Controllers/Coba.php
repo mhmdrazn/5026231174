@@ -9,4 +9,12 @@ class Coba extends Controller
     public function helloWolrd(){
         return view("blog");
     }
+
+    public function index(){
+        $nama = "Diki Alfarabi Hadi";
+        $umur = 20;
+        $alamat = "Surabaya";
+        $pelajaran = ["Algoritma & Pemrograman","Kalkulus","Pemrograman Web"];
+        return view('biodata',['nama' => $nama, 'umur' => $umur, 'alamat' => $alamat, 'matkul' => $pelajaran]); 
+    }
 }
