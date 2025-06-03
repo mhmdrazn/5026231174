@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,9 +100,9 @@ Route::get('/dosen',
 );
 
 // Ambil data dari URL
-Route::get('/pegawai/{nama}',
-    [PegawaiController::class, 'index']
-);
+// Route::get('/pegawai/{nama}',
+//     [PegawaiController::class, 'index']
+// );
 
 // Ambil data dari Input Formulir
 // Halaman isian formulir
@@ -122,4 +123,36 @@ Route::get('/blog/tentang',
 
 Route::get('/blog/kontak',
     [BlogController::class, 'kontak']
+);
+
+// CRUD - Read data pegawai dari database
+Route::get('/pegawai',
+    [PegawaiDBController::class, 'index']
+);
+
+// CRUD - Create data pegawai ke database
+Route::get('pegawai/tambah',
+    [PegawaiDBController::class, 'tambah']
+);
+
+Route::post('pegawai/store',
+    [PegawaiDBController::class, 'store']
+);
+
+// CRUD - Update data pegawai dari database
+Route::get('pegawai/edit/{id}',
+    [PegawaiDBController::class, 'edit']
+);
+
+Route::post('pegawai/update',
+    [PegawaiDBController::class, 'update']
+);
+
+// CRUD - Delete data pegawai dari database
+Route::get('pegawai/hapus/{id}',
+    [PegawaiDBController::class, 'hapus']
+);
+
+Route::post('pegawai/update',
+    [PegawaiDBController::class, 'update']
 );
