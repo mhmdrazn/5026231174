@@ -5,6 +5,7 @@ use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\KipasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -168,4 +169,39 @@ Route::get('pegawai/input',
 
 Route::post('/proses',
     [PegawaiDBController::class, 'proses']
+);
+
+// Tugas CRUD
+
+// Create Kipas Angin
+Route::get('/tugascrud/tambah',
+    [KipasController::class, 'create']
+);
+
+Route::post('/tugascrud/store',
+    [KipasController::class, 'store']
+);
+
+// Read Kipas Angin
+Route::get('/tugascrud',
+    [KipasController::class, 'read']
+);
+
+// Update Kipas Angin
+Route::get('/tugascrud/edit/{id}',
+    [KipasController::class, 'edit']
+);
+
+Route::post('/tugascrud/update',
+    [KipasController::class, 'update']
+);
+
+// Delete Kipas Angin
+Route::post('/tugascrud/delete/{id}',
+    [KipasController::class, 'delete']
+);
+
+// Search Kipas Angin
+Route::get('/tugascrud/cari',
+    [KipasController::class, 'cari']
 );
