@@ -41,15 +41,6 @@
         </table>
     </div>
 
-    <div class="d-flex justify-content-between align-items-center mt-3">
-        <a href="/latihan1/tambah" class="btn btn-success">
-            Tambah Karyawan <i class="bi bi-plus-circle ms-2"></i>
-        </a>
-        <div>
-            {{-- {{ $karyawan->links() }} --}}
-        </div>
-    </div>
-
     <br>
     <br>
 @endsection
