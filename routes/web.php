@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\KipasController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\CounterController;
+use App\Http\Controllers\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -242,4 +244,42 @@ Route::post('/latihan1/delete/{kodepegawai}',
 // Search
 Route::get('/latihan1/cari',
     [KaryawanController::class, 'cari']
+);
+
+// ======
+
+// Latihan 2 - Counter
+
+// Read
+Route::get('/latihan2',
+    [CounterController::class, 'read']
+);
+
+// Update
+Route::get('/latihan2/edit/{id}',
+    [CounterController::class, 'edit']
+);
+
+
+// ======
+
+// Latihan 3 - Pembelian
+
+// Read
+Route::get('/latihan3',
+    [BarangController::class, 'read']
+);
+
+// Update
+Route::get('/latihan3/edit/{id}',
+    [BarangController::class, 'edit']
+);
+
+Route::post('/latihan3/update',
+    [BarangController::class, 'update']
+);
+
+// Delete
+Route::post('/latihan3/delete/{id}',
+    [BarangController::class, 'delete']
 );
