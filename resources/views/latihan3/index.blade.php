@@ -2,7 +2,15 @@
 @section('content')
 
 	<h3>Keranjang Belanja</h3>
-    <br>
+
+    <br/>
+    <a href="/latihan3/edit" class="btn btn-md btn-primary mr-1">
+        <i class="bi bi-pencil"></i> Edit
+    </a>
+
+    <br/>
+    <br/>
+
 
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
@@ -25,9 +33,6 @@
                     <td class="text-center">Rp{{ number_format($k->Harga, 0, ',', '.') }}</td>
                     <td class="text-center">Rp{{ number_format(($k->Jumlah) * ($k->Harga), 0, ',', '.') }}</td>
                     <td class="text-center">
-                        <a href="/latihan3/edit/{{ $k->ID }}" class="btn btn-sm btn-primary mr-1">
-                            <i class="bi bi-pencil"></i> Edit
-                        </a>
                         <form action="/latihan3/delete/{{ $k->ID }}" method="POST" style="display:inline;">
                             @csrf
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">
@@ -41,6 +46,5 @@
         </table>
     </div>
 
-    <br>
     <br>
 @endsection

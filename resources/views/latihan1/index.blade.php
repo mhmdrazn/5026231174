@@ -4,17 +4,6 @@
 	<h3>Data Karyawan</h3>
     <br>
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <div class="mb-4">
-            <form action="/latihan1/cari" method="GET" class="d-flex" style="max-width:400px; gap:10px;">
-                <input type="text" name="cari" class="form-control" placeholder="Cari karyawan" value="{{ old('cari') }}">
-                <button class="btn btn-secondary" type="submit">
-                <i class="bi bi-search"></i> Cari
-                </button>
-            </form>
-        </div>
-    </div>
-
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead class="thead-dark text-center">
@@ -51,9 +40,6 @@
         <a href="/latihan1/tambah" class="btn btn-success">
             Tambah Karyawan <i class="bi bi-plus-circle ms-2"></i>
         </a>
-        <div>
-            {{ $karyawan->links() }}
-        </div>
     </div>
 
     <br>

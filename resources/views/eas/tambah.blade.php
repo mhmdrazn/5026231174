@@ -6,8 +6,8 @@
         <div class="col-12">
             <!-- Header -->
             <div class="mb-4">
-                <h3 class="mb-3">Tambah Data Karyawan</h3>
-                <a href="/latihan1">
+                <h3 class="mb-3">Tambah Data Karyawan Baru</h3>
+                <a href="/eas">
                     <i class="bi bi-arrow-left"></i> Kembali
                 </a>
             </div>
@@ -15,21 +15,21 @@
             <!-- Form Card -->
             <div class="card shadow-sm">
                 <div class="card-body p-4">
-                    <form action="/latihan1/store" method="POST" id="kipasForm">
+                    <form action="/eas/store" method="POST" id="karyawanForm">
                         @csrf
 
                         <!-- Nama Field -->
                         <div class="mb-3 row align-items-center">
-                            <label for="merk" class="col-sm-3 col-form-label fw-semibold">
-                                Kode Karyawan
+                            <label for="NIP" class="col-sm-3 col-form-label fw-semibold">
+                                NIP
                             </label>
                             <div class="col-sm-9">
                                 <input type="text"
-                                       class="form-control @error('kode') is-invalid @enderror"
-                                       id="kode"
-                                       name="kode"
-                                       value="{{ old('kode') }}"
-                                       placeholder="Masukkan kode karyawan"
+                                       class="form-control @error('nip') is-invalid @enderror"
+                                       id="nip"
+                                       name="nip"
+                                       value="{{ old('nip') }}"
+                                       placeholder="Masukkan NIP karyawan"
                                        required>
                                 @error('kode')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -57,7 +57,7 @@
                         <!-- Nama Field -->
                         <div class="mb-3 row align-items-center">
                             <label for="merk" class="col-sm-3 col-form-label fw-semibold">
-                                Nama Karyawan
+                                Nama
                             </label>
                             <div class="col-sm-9">
                                 <input type="text"
@@ -73,39 +73,39 @@
                             </div>
                         </div>
 
-                        <!-- Harga Field -->
+                        <!-- Pangkat -->
                         <div class="mb-3 row align-items-center">
-                            <label for="divisi" class="col-sm-3 col-form-label fw-semibold">
-                                Divisi
+                            <label for="pangkat" class="col-sm-3 col-form-label fw-semibold">
+                                Pangkat
                             </label>
                             <div class="col-sm-9">
                                 <input type="text"
-                                    class="form-control @error('divisi') is-invalid @enderror"
-                                    id="divisi"
-                                    name="divisi"
-                                    value="{{ old('divisi') }}"
-                                    placeholder="Masukkan divisi karyawan"
+                                    class="form-control @error('pangkat') is-invalid @enderror"
+                                    id="pangkat"
+                                    name="pangkat"
+                                    value="{{ old('pangkat') }}"
+                                    placeholder="Masukkan pangkat karyawan"
                                     required>
-                                @error('divisi')
+                                @error('pangkat')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
 
-                        <!-- Departemen Field -->
+                        <!-- Gaji -->
                         <div class="mb-3 row align-items-center">
-                            <label for="departemen" class="col-sm-3 col-form-label fw-semibold">
-                                Departemen
+                            <label for="gaji" class="col-sm-3 col-form-label fw-semibold">
+                                Gaji
                             </label>
                             <div class="col-sm-9">
-                                <input type="text"
-                                    class="form-control @error('departemen') is-invalid @enderror"
-                                    id="departemen"
-                                    name="departemen"
-                                    value="{{ old('departemen') }}"
-                                    placeholder="Masukkan departemen"
+                                <input type="number"
+                                    class="form-control @error('gaji') is-invalid @enderror"
+                                    id="gaji"
+                                    name="gaji"
+                                    value="{{ old('gaji') }}"
+                                    placeholder="Masukkan gaji karyawan"
                                     required>
-                                @error('departemen')
+                                @error('gaji')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -115,7 +115,7 @@
 
                         <!-- Submit Button -->
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            <button type="submit" class="btn btn-success btn-lg" style="width: 100%;">
                                 <i class="bi bi-plus-circle me-2"></i>Simpan
                             </button>
                         </div>

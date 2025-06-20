@@ -9,6 +9,8 @@ use App\Http\Controllers\KipasController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\NewKaryawanController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -265,21 +267,89 @@ Route::get('/latihan2/edit/{id}',
 
 // Latihan 3 - Pembelian
 
+// Create
+Route::post('/latihan3/store',
+    [BarangController::class, 'store']
+);
+
+Route::get('/latihan3/edit',
+    [BarangController::class, 'edit']
+);
+
 // Read
 Route::get('/latihan3',
     [BarangController::class, 'read']
 );
 
-// Update
-Route::get('/latihan3/edit/{id}',
-    [BarangController::class, 'edit']
-);
-
-Route::post('/latihan3/update',
-    [BarangController::class, 'update']
-);
-
 // Delete
 Route::post('/latihan3/delete/{id}',
     [BarangController::class, 'delete']
+);
+
+
+// ======
+
+// Latihan AA
+
+Route::get('/chat',
+    [ChatController::class, 'read']
+);
+
+
+// ======
+
+// Latihan BB
+
+// read
+Route::get('/mahasiswa',
+    [MahasiswaController::class, 'read']
+);
+
+// update
+Route::get('/mahasiswa/edit/{nrp}',
+    [MahasiswaController::class, 'edit']
+);
+
+Route::post('/mahasiswa/update',
+    [MahasiswaController::class, 'update']
+);
+
+Route::get('/mahasiswa/view/{nrp}',
+    [MahasiswaController::class, 'view']
+);
+
+// ======
+
+// Latihan CC
+
+Route::get('/combo',
+    [ComboboxController::class, 'read']
+);
+
+Route::get('/combo/send',
+    [ComboboxController::class, 'handle']
+);
+
+
+// ======
+
+// Latihan CC
+
+// Read
+Route::get('/eas',
+    [NewKaryawanController::class, 'read']
+);
+
+// Create
+Route::get('/eas/tambah',
+    [NewKaryawanController::class, 'create']
+);
+
+Route::post('/eas/store',
+    [NewKaryawanController::class, 'store']
+);
+
+// Delete
+Route::post('/eas/delete/{nip}',
+    [NewKaryawanController::class, 'delete']
 );

@@ -14,7 +14,7 @@
 
             <!-- Form Card -->
             <div class="card shadow-sm">
-                <form action="/latihan3/update" method="POST">
+                <form action="/latihan3/store" method="POST">
                     @csrf
                     <!-- ID -->
                     <div class="mb-3">
@@ -25,7 +25,6 @@
                                 class="form-control @error('ID') is-invalid @enderror"
                                 id="ID"
                                 name="ID"
-                                value="{{ old('ID', $keranjang->ID) }}"
                                 required>
                     </div>
 
@@ -38,7 +37,6 @@
                                 class="form-control @error('kode') is-invalid @enderror"
                                 id="kode"
                                 name="kode"
-                                value="{{ old('kode', $keranjang->KodeBarang) }}"
                                 required>
                     </div>
 
@@ -51,7 +49,6 @@
                                     class="form-control @error('jumlah') is-invalid @enderror"
                                     id="jumlah"
                                     name="jumlah"
-                                    value="{{ old('jumlah', $keranjang->Jumlah) }}"
                                     required>
                             @error('jumlah')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -68,7 +65,6 @@
                                     class="form-control @error('harga') is-invalid @enderror"
                                     id="harga"
                                     name="harga"
-                                    value="{{ old('harga', $keranjang->Harga) }}"
                                     required>
                             @error('harga')
                                 <div class="invalid-feedback">{{ $message }}</div>

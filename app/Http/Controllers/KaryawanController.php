@@ -15,24 +15,34 @@ class KaryawanController extends Controller
     }
 
     public function store(Request $request){
-        // insert data ke table karyawan
+    // Validasi manual: cek apakah kodepegawai sudah ada di tabel
+        $existing = DB::table('karyawan')->where('kodepegawai', $request->kode)->first();
+
+        if ($existing) {
+            // Jika sudah ada, redirect kembali dengan error
+            return redirect()->back()
+                ->with('error', 'Kode Pegawai sudah digunakan. Silakan masukkan kode lain.')
+                ->withInput(); // Untuk menyimpan input sebelumnya
+        }
+
+        // Jika belum ada, insert data ke tabel karyawan
         DB::table('karyawan')->insert([
             'kodepegawai' => $request->kode,
             'namalengkap' => $request->nama,
             'divisi' => $request->divisi,
             'departemen' => $request->departemen
         ]);
-        // alihkan halaman ke halaman index
-        return redirect('/latihan1');
 
+        // Alihkan ke halaman index
+        return redirect('/latihan1')->with('success', 'Data berhasil ditambahkan!');
     }
 
     // Read
     public function read(){
         // ambil data dari table kipasangin
-        $karyawan = DB::table('karyawan')->paginate(10);
+        $karyawan = DB::table('karyawan')->get();
 
-        return view('latihan1/index', ['karyawan'=> $karyawan]);
+        return view('/latihan1/index', ['karyawan'=> $karyawan]);
     }
 
     // Update
@@ -51,7 +61,7 @@ class KaryawanController extends Controller
             'departemen' => $request->departemen,
         ]);
 
-        return redirect('/latihan1/index');
+        return redirect('latihan1/index');
     }
 
     // Delete

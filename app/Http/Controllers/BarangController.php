@@ -24,14 +24,14 @@ class BarangController extends Controller
 
     // Read
     public function read(){
-        $keranjang = DB::table('keranjangbelanja')->paginate(10);
+        $keranjang = DB::table('keranjangbelanja')->get();
 
         return view('latihan3/index', ['keranjang'=> $keranjang]);
     }
 
     // Update
-    public function edit($ID){
-        $keranjang = DB::table('keranjangbelanja')->where('ID', $ID)->first();
+    public function edit(){
+        $keranjang = DB::table('keranjangbelanja')->first();
 
         return view('latihan3/edit', ['keranjang' => $keranjang]);
     }
